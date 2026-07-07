@@ -105,6 +105,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | crawling remote controller | used to control all of the motors | only sold with hexapod |<a href= "https://www.amazon.com/Freenove-Raspberry-Crawling-Detailed-Tutorial/dp/B07FLVZ2DN?th=1/"> Link </a> |
 | servo motors(18) | used for moving the legs or the whole robot | $21.39 | <a href="https://www.amazon.com/KEAcvise-Packs-mg996r-servo-Motor/dp/B0FGP9ZPJN/"> Link </a> |
 | remote control spider shield | one of the parts used for the remote control to make the hexapod move without connecting to your computer | only sold with hexapod |<a href= "https://www.amazon.com/Freenove-Raspberry-Crawling-Detailed-Tutorial/dp/B07FLVZ2DN?th=1/"> Link </a> |
+| arduino uno(2) | one is used for the controller the other is used for my modifications | $14.99 |<a href="https://www.amazon.com/ELEGOO-Board-ATmega328P-ATMEGA16U2-Compliant/dp/B01EWOE0UU/"> Link </a> |
 
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
