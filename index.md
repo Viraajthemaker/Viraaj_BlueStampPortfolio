@@ -49,16 +49,27 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
+
+//Remote Code
+#ifndef ARDUINO_AVR_UNO
+#error Wrong board. Please choose "Arduino/Genuino Uno"
+#endif
+
+// Include FNHR (Freenove Hexapod Robot) library
+#include <FNHR.h>
+
+FNHRRemote remote;
+
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
+  // Start remote
+  remote.Start();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  // Update remote
+  remote.Update();
 }
+
 ```
 
 # Bill of Materials
