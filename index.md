@@ -102,7 +102,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 |:--:|:--:|:--:|:--:|
 | WLAN module| This is used to connect the hexapod to your phone or controller| $6.59 |https://www.amazon.com/DIYmall-ESP8266-ESP-01S-Serial-Transceiver/dp/B00O34AGSU/|
 | Wireless transceiver module(2)| used for sending signals from the remote to the hexapod to make it move | $8.86 | https://www.amazon.com/KEAcvise-4-Pack-NRF24L01-2-4GHz-Transceiver/dp/B0F93YYN9B/ |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| crawling remote controller | used to control all of the motors | only sold with hexapod | https://www.amazon.com/Freenove-Raspberry-Crawling-Detailed-Tutorial/dp/B07FLVZ2DN?th=1 |
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
 # Other Resources/Examples
