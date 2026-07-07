@@ -103,7 +103,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | WLAN module| This is used to connect the hexapod to your phone or controller| $6.59 | <a href="https://www.amazon.com/DIYmall-ESP8266-ESP-01S-Serial-Transceiver/dp/B00O34AGSU/"> Link </a>|
 | Wireless transceiver module(2)| used for sending signals from the remote to the hexapod to make it move | $8.86 |<a href="https://www.amazon.com/KEAcvise-4-Pack-NRF24L01-2-4GHz-Transceiver/dp/B0F93YYN9B/"> Link </a> |
 | crawling remote controller | used to control all of the motors | only sold with hexapod |<a href= "https://www.amazon.com/Freenove-Raspberry-Crawling-Detailed-Tutorial/dp/B07FLVZ2DN?th=1/"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| servo motors(18) | used for moving the legs or the whole robot | $21.39 | <a href="https://www.amazon.com/KEAcvise-Packs-mg996r-servo-Motor/dp/B0FGP9ZPJN/"> Link </a> |
 
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
