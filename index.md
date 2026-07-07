@@ -71,6 +71,28 @@ void loop() {
 }
 
 ```
+```c++
+//Hexapod code
+#ifndef ARDUINO_AVR_MEGA2560
+#error Wrong board. Please choose "Arduino/Genuino Mega or Mega 2560"
+#endif
+
+// Include FNHR (Freenove Hexapod Robot) library
+#include <FNHR.h>
+
+FNHR robot;
+
+void setup() {
+  // Start Freenove Hexapod Robot with default function
+  robot.Start(true);
+}
+
+void loop() {
+  // Update Freenove Hexapod Robot
+  robot.Update();
+}
+
+```
 
 # Bill of Materials
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
