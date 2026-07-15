@@ -1,5 +1,5 @@
 # Viraaj's Hexapod Robot
-The Hexapod is a robotic creature designed with six legs that recreate the walking motion of a spider. It is a programmable robot that allows me to build and customize my own Hexapod robot. The Hexapod’s body is made of acrylic material. Each leg consists of three servo motors and this helps get precise movement. The Hexapod is powered by an Arduino mega or mega 2560, which serves as the brain of the robot, controlling its actions and receiving input from the wireless transciever module. It also has a controller that is the main thing that lets it move. The hexapod for me is a fun project that lets you modify it to becone even more fun.
+The Hexapod is a robotic creature designed with six legs that recreate the walking motion of a spider. It is a programmable robot that allows me to build and customize my own Hexapod robot. The Hexapod’s body is made of acrylic material. Each leg consists of three servo motors and this helps get precise movement. The Hexapod is powered by an Arduino mega or mega 2560, which serves as the brain of the robot, controlling its actions and receiving input from the wireless transciever module. It also has a controller that is the main thing that lets it move. The hexapod for me is a fun project that lets you modify it to bemone even more fun.
 
 
 
