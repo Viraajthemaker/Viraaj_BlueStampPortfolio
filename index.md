@@ -18,12 +18,9 @@ The Hexapod is a robotic creature designed with six legs that recreate the walki
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XuwWDlP9Ilw?si=Tjy6VWH0GvB65OKy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-For my final milestone, I got the speaker to work through the 3d printed basketball head. During this, I realised that every time I turned my hexapod on, the battery drained drastically. This was because my processing IDE code was downloaded wrong. I had to completely uninstall processing and reinstall it to get the battery to work. I also realized that 3 of my servo horns were very worn out and I had to get new ones to fix it. Without doing this, even when my battery was on, I could move the 3 servos with my hand when they are supposed to stay in place. At the end of my milestone, my basketball shaped head prevented my hexapod legs from moving. I needed to redesign the head and add stands to my battery pack to not let it touch the wires. Overall, the challenges from this project really inspired me to keep moving even when you have to take your whole project apart.
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+For my final milestone, I got the speaker to work through the 3d printed basketball head. I got to learn python while coding the speaker which was a really big accomplishment for me. During this, I realized that every time I turned my hexapod on, the battery drained drastically. This was because my processing IDE code was downloaded wrong. I had to completely uninstall processing and reinstall it to get the battery to work. I also realized that 3 of my servo horns were very worn out and I had to get new ones to fix it. Without doing this, even when my battery was on, I could move the 3 servos with my hand when they are supposed to stay in place. At the end of my milestone, my basketball shaped head prevented my hexapod legs from moving. I needed to redesign the head and add stands to my battery pack to not let it touch the wires. Overall, the challenges from this project really inspired me to keep moving even when you have to take your whole project apart.
+
+My time at Bluestamp has taught me
 
 
 
