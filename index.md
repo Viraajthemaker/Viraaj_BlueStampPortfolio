@@ -269,6 +269,7 @@ void RobotAction::LegsMoveToRelatively(Point point, float speed)
 
 #endif
 ```
+now this is the code in python that makes the speaker work
 ```c++
 from playsound3 import playsound
 import random
