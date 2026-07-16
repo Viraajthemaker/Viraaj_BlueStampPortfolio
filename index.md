@@ -41,7 +41,7 @@ For my first milestone, I finished the chassis of my hexapod and now it works fr
 
 
 # Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. ![Headstone Image](head.png) ![Headstone Image](rawr.png)
+These are my 3d printed designs. The second photo is my battery pack and the first one is my hexapod head. The head amplifies the speaker because the speaker needs a hollow object for you to hear sound. ![Headstone Image](head.png) ![Headstone Image](rawr.png)
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
@@ -265,6 +265,43 @@ void RobotAction::LegsMoveToRelatively(Point point, float speed)
 }
 
 #endif
+```
+```c++
+from playsound3 import playsound
+import random
+import time
+
+files = [
+"Recording (6).m4a",
+"Recording (7).m4a",
+"Recording (8).m4a",
+"Recording (9).m4a",
+"Recording (10).m4a",
+"Recording (11).m4a",
+"Recording (13).m4a",
+"Recording (12).m4a"
+]
+
+print("Starting the Humbird speaker")
+time.sleep(3)
+
+while True:
+    try:
+        randomAudio = random.choice(files)
+        print(f"Now playing a random sound: {randomAudio}")
+
+        playsound(randomAudio)
+
+        print("Finished playing sound, now resting...")
+        time.sleep(4)
+
+    except KeyboardInterrupt:
+        print("Interrupted by user, exiting...")
+        break
+
+    except Exception as e:
+        print(f"Bluetooth interrupted: {e}")
+        time.sleep(5)
 ```
 
 
