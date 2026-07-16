@@ -91,6 +91,182 @@ void loop() {
 }
 
 ```
+```c++
+void RobotAction::GetCrawlPoints(RobotLegsPoints & points, Point point)
+{
+  GetCrawlPoint(points.leg1, point);
+  GetCrawlPoint(points.leg2, point);
+  GetCrawlPoint(points.leg3, point);
+  GetCrawlPoint(points.leg4, point);
+  GetCrawlPoint(points.leg5, point);
+  GetCrawlPoint(points.leg6, point);
+}
+
+void RobotAction::GetCrawlPoint(Point & point, Point direction)
+{
+  point = Point(point.x + direction.x, point.y + direction.y, point.z + direction.z);
+}
+
+void RobotAction::GetTurnPoints(RobotLegsPoints & points, float angle)
+{
+  GetTurnPoint(points.leg1, angle);
+  GetTurnPoint(points.leg2, angle);
+  GetTurnPoint(points.leg3, angle);
+  GetTurnPoint(points.leg4, angle);
+  GetTurnPoint(points.leg5, angle);
+  GetTurnPoint(points.leg6, angle);
+}
+
+void RobotAction::GetTurnPoint(Point & point, float angle)
+{
+  float radian = angle * PI / 180;
+  float radius = sqrt(pow(point.x, 2) + pow(point.y, 2));
+
+  float x = radius * cos(atan2(point.y, point.x) + radian);
+  float y = radius * sin(atan2(point.y, point.x) + radian);
+
+  point = Point(x, y, point.z);
+}
+
+void RobotAction::TwistBody(Point move, Point rotateAxis, float rotateAngle)
+{
+  ActionState();
+  if (legsState != LegsState::TwistBodyState)
+    InitialState();
+
+  RobotLegsPoints points = lastChangeLegsStatePoints;
+  points.leg1.z = -defaultBodyLift;
+  points.leg2.z = -defaultBodyLift;
+  points.leg3.z = -defaultBodyLift;
+  points.leg4.z = -defaultBodyLift;
+  points.leg5.z = -defaultBodyLift;
+  points.leg6.z = -defaultBodyLift;
+
+  // move body
+  move.x = constrain(move.x, -30, 30);
+  move.y = constrain(move.y, -30, 30);
+  move.z = constrain(move.z, 0, 45);
+  GetMoveBodyPoints(points, move);
+
+  // rotate body
+  rotateAngle = constrain(rotateAngle, -15, 15);
+  GetRotateBodyPoints(points, rotateAxis, rotateAngle);
+
+  LegsMoveTo(points, speedTwistBody);
+
+  legsState = LegsState::TwistBodyState;
+}
+
+void RobotAction::GetMoveBodyPoints(RobotLegsPoints & points, Point point)
+{
+  GetMoveBodyPoint(points.leg1, point);
+  GetMoveBodyPoint(points.leg2, point);
+  GetMoveBodyPoint(points.leg3, point);
+  GetMoveBodyPoint(points.leg4, point);
+  GetMoveBodyPoint(points.leg5, point);
+  GetMoveBodyPoint(points.leg6, point);
+}
+
+void RobotAction::GetMoveBodyPoint(Point & point, Point direction)
+{
+  point = Point(point.x - direction.x, point.y - direction.y, point.z - direction.z);
+}
+
+void RobotAction::GetRotateBodyPoints(RobotLegsPoints &points, Point rotateAxis, float rotateAngle)
+{
+  float rotateAxisLength = sqrt(pow(rotateAxis.x, 2) + pow(rotateAxis.y, 2) + pow(rotateAxis.z, 2));
+  if (rotateAxisLength == 0)
+  {
+    rotateAxis.x = 0;
+    rotateAxis.y = 0;
+    rotateAxis.z = 1;
+  }
+  else
+  {
+    rotateAxis.x /= rotateAxisLength;
+    rotateAxis.y /= rotateAxisLength;
+    rotateAxis.z /= rotateAxisLength;
+  }
+
+  GetRotateBodyPoint(points.leg1, rotateAxis, rotateAngle);
+  GetRotateBodyPoint(points.leg2, rotateAxis, rotateAngle);
+  GetRotateBodyPoint(points.leg3, rotateAxis, rotateAngle);
+  GetRotateBodyPoint(points.leg4, rotateAxis, rotateAngle);
+  GetRotateBodyPoint(points.leg5, rotateAxis, rotateAngle);
+  GetRotateBodyPoint(points.leg6, rotateAxis, rotateAngle);
+}
+
+void RobotAction::GetRotateBodyPoint(Point & point, Point rotateAxis, float rotateAngle)
+{
+  Point oldPoint = point;
+
+  rotateAngle = rotateAngle * PI / 180;
+  float c = cos(rotateAngle);
+  float s = sin(rotateAngle);
+
+  point.x = (rotateAxis.x * rotateAxis.x * (1 - c) + c) * oldPoint.x + (rotateAxis.x * rotateAxis.y * (1 - c) - rotateAxis.z * s) * oldPoint.y + (rotateAxis.x * rotateAxis.z * (1 - c) + rotateAxis.y * s) * oldPoint.z;
+  point.y = (rotateAxis.y * rotateAxis.x * (1 - c) + rotateAxis.z * s) * oldPoint.x + (rotateAxis.y * rotateAxis.y * (1 - c) + c) * oldPoint.y + (rotateAxis.y * rotateAxis.z * (1 - c) - rotateAxis.x * s) * oldPoint.z;
+  point.z = (rotateAxis.x * rotateAxis.z * (1 - c) - rotateAxis.y * s) * oldPoint.x + (rotateAxis.y * rotateAxis.z * (1 - c) + rotateAxis.x * s) * oldPoint.y + (rotateAxis.z * rotateAxis.z * (1 - c) + c) * oldPoint.z;
+}
+
+void RobotAction::LegsMoveTo(RobotLegsPoints points)
+{
+  if (!robot.CheckPoints(points))
+    return;
+
+  robot.MoveTo(points);
+  robot.WaitUntilFree();
+}
+
+void RobotAction::LegsMoveTo(RobotLegsPoints points, float speed)
+{
+  if (!robot.CheckPoints(points))
+    return;
+
+  robot.SetSpeed(speed);
+  robot.MoveTo(points);
+  robot.WaitUntilFree();
+}
+
+void RobotAction::LegsMoveTo(RobotLegsPoints points, int leg, float legSpeed)
+{
+  if (!robot.CheckPoints(points))
+    return;
+
+  float distance[6] = {
+    Point::GetDistance(robot.leg1.pointNow, points.leg1),
+    Point::GetDistance(robot.leg2.pointNow, points.leg2),
+    Point::GetDistance(robot.leg3.pointNow, points.leg3),
+    Point::GetDistance(robot.leg4.pointNow, points.leg4),
+    Point::GetDistance(robot.leg5.pointNow, points.leg5),
+    Point::GetDistance(robot.leg6.pointNow, points.leg6) };
+
+  float speed[6] = {
+    distance[0] / distance[leg - 1] * legSpeed,
+    distance[1] / distance[leg - 1] * legSpeed,
+    distance[2] / distance[leg - 1] * legSpeed,
+    distance[3] / distance[leg - 1] * legSpeed,
+    distance[4] / distance[leg - 1] * legSpeed,
+    distance[5] / distance[leg - 1] * legSpeed };
+
+  robot.SetSpeed(speed[0], speed[1], speed[2], speed[3], speed[4], speed[5]);
+  robot.MoveTo(points);
+  robot.WaitUntilFree();
+}
+
+void RobotAction::LegsMoveToRelatively(Point point, float speed)
+{
+  RobotLegsPoints points;
+
+  robot.GetPointsNow(points);
+  GetCrawlPoints(points, point);
+
+  LegsMoveTo(points, speed);
+}
+
+#endif
+```
+
 
 # Bill of Materials
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
