@@ -41,7 +41,10 @@ For my first milestone, I finished the chassis of my hexapod and now it works fr
 
 
 # Schematics 
-These are my 3d printed designs. The second photo is my battery pack and the first one is my hexapod head. The head amplifies the speaker because the speaker needs a hollow object for you to hear sound.                ![Headstone Image](head.png) ![Headstone Image](rawr.png)
+These are my 3d printed designs. The second photo is my battery pack and the first one is my hexapod head. The head amplifies the speaker because the speaker needs a hollow object for you to hear sound.               
+
+
+![Headstone Image](head.png) ![Headstone Image](rawr.png)
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
