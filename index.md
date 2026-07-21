@@ -43,9 +43,9 @@ For my first milestone, I finished the chassis of my hexapod and now it works fr
 These are my 3d printed designs. The second photo is my battery pack and the first one is my hexapod head. The head amplifies the speaker because the speaker needs a hollow object for you to hear sound.               
 
 
-![Headstone Image](head.png) 
+figure 1.![Headstone Image](head.png) 
 
-![Headstone Image](rawr.png)
+figure 2.![Headstone Image](rawr.png)
 
 # Code 
 
