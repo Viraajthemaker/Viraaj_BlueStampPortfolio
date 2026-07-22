@@ -325,5 +325,7 @@ This is the Bill Of Materials for the main parts for the hexapod
 
 # Other Resources/Examples
 [Click here to visit the freenove hexapod tutorial](https://freenove.com/fnk0031)
+
+
 Thank you for viewing my portfolio on my hexapod
 :)
