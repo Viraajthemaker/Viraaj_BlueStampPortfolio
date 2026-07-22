@@ -324,6 +324,6 @@ This is the Bill Of Materials for the main parts for the hexapod
 | arduino uno(2) | one is used for the controller the other is used for my modifications | $14.99 |<a href="https://www.amazon.com/ELEGOO-Board-ATmega328P-ATMEGA16U2-Compliant/dp/B01EWOE0UU/"> Link </a> |
 
 # Other Resources/Examples
-
+[Click here to visit the freenove hexapod tutorial](https://freenove.com/fnk0031)
 Thank you for viewing my portfolio on my hexapod
 :)
