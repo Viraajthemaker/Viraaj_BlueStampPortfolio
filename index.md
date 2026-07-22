@@ -10,6 +10,8 @@ The Hexapod is a robotic creature designed with six legs that recreate the walki
 
 
 ![Headstone Image](IMG_0239.jpeg)
+
+![Headstone Image](IMG_0234.jpeg)
   
 # Final Milestone
 
